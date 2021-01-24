@@ -13,12 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+
 from django.urls import path, include # include 가져오기
-from django.conf.urls.static import static # url 모음을 위한 추가
-from django.conf import settings # url 모음을 위한 추가2
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('home/', include('arduino.urls')),
+    path('', views.indexs.as_view()),
 ]
+
+
+
